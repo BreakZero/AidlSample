@@ -31,6 +31,7 @@ import com.easy.aidlserver.User
 import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
+    private val _1M = 1024 * 1024
     private var iRemoteService: IRemoteAidlInterface? = null
     private val sConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -105,7 +106,8 @@ class MainActivity : ComponentActivity() {
                                     iRemoteService?.addUser(
                                         User(
                                             "Dougie ${Random.nextInt(1, 100)}",
-                                            Random.nextInt(18, 24)
+                                            Random.nextInt(18, 24),
+                                            byteArray = ByteArray(_1M)
                                         )
                                     )
                                 }) {

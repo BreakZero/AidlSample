@@ -16,7 +16,6 @@ import com.easy.aidlserver.ui.theme.AidlSampleTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startService(Intent(this, RemoteService::class.java))
         setContent {
             AidlSampleTheme {
                 // A surface container using the 'background' color from the theme
